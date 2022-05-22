@@ -1,0 +1,61 @@
+﻿// C# Code for Merging two
+// unsorted arrays in sorted order
+using System;
+
+class MergeSort
+{
+
+	// Function to merge array in sorted order
+	public static void sortedMerge(int[] a, int[] b,
+								int[] res, int n,
+								int m)
+	{
+		// Concatenate two arrays
+		int i = 0, j = 0, k = 0;
+		while (i < n)
+		{
+			res[k] = a[i];
+			i++;
+			k++;
+		}
+
+		while (j < m)
+		{
+			res[k] = b[j];
+			j++;
+			k++;
+		}
+
+		// sorting the res array
+		Array.Sort(res);
+	}
+
+	/* Driver program to test above function */
+	public static void Main()
+	{
+        try
+        {
+			int[] a = { 10, 5, 15 };
+			int[] b = { 20, 3, 2, 12 };
+			int n = a.Length;
+			int m = b.Length;
+
+			// Final merge list
+			int[] res = new int[n + m];
+			sortedMerge(a, b, res, n, m);
+
+			Console.Write("Sorted merged list :");
+			for (int i = 0; i < n + m; i++)
+				Console.Write(" " + res[i]);
+			Console.ReadKey();
+		}
+		
+        catch (Exception ex)
+        {
+
+            throw (ex);
+        }
+	}
+}
+
+// This code is contributed by nitin mittal.
